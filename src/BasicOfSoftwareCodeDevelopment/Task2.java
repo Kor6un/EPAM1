@@ -26,6 +26,8 @@ public class Task2 {
         System.out.println("Input c: ");
         c = scanner.nextDouble();
 
+        scanner.close();
+
         if (a != 0) {
             System.out.println( (b + Math.pow(4 * a * c, 0.5) / (2 * a))
                     - Math.pow(a, 3) * c - Math.pow(b, -2) );

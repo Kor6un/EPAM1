@@ -24,6 +24,8 @@ public class Task1 {
         System.out.print("Input c: ");
         c = scanner.nextDouble();
 
+        scanner.close();
+
         System.out.println("z = " + ((a - 3) * b / 2 + c));
     }
 }

@@ -21,6 +21,8 @@ public class Task3 {
         System.out.println("Input y: ");
         y = scanner.nextDouble();
 
+        scanner.close();
+
         double v = Math.cos(x) - Math.sin(y);
         if ( v != 0) {
             System.out.println("Result: " + ((Math.sin(x) + Math.cos(y)) * Math.tan(x * y)) / (v));
