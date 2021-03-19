@@ -8,11 +8,11 @@ HHч MMмин SSс.
 
 */
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Task5 {
     public static void main(String[] args) {
+
         int t, h, m, s;
 
         System.out.println("Enter the number of seconds T:");
@@ -24,7 +24,27 @@ public class Task5 {
         m = (t - h*3600)/60;
         s = t%60;
 
-        System.out.println(h + "ч " + m + "мин " + s + "с");
+        StringBuilder result = new StringBuilder();
+        if (h <= 9 ) {
+            result.append(0).append(h).append("ч ");
+        } else {
+            result.append(h).append("ч ");
+        }
+
+        if (m <= 9 ) {
+            result.append(0).append(m).append("мин ");
+        } else {
+            result.append(m).append("мин ");
+        }
+
+        if (s <= 9 ) {
+            result.append(0).append(s).append("c");
+        } else {
+            result.append(s).append("c");
+        }
+
+        System.out.println(result);
+
 
     }
 }
