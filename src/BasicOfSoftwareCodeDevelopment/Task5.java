@@ -32,12 +32,12 @@ public class Task5 {
         System.out.println(result);
     }
 
-    private static StringBuilder getFormattingResult(int h) {
+    private static StringBuilder getFormattingResult(int number) {
         StringBuilder result = new StringBuilder();
-        if (h <= 9 ) {
-            result.append(0).append(h);
+        if (number <= 9 ) {
+            result.append(0).append(number);
         } else {
-            result.append(h);
+            result.append(number);
         }
         return result;
     }
