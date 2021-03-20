@@ -24,27 +24,21 @@ public class Task5 {
         m = (t - h*3600)/60;
         s = t%60;
 
-        StringBuilder result = new StringBuilder();
-        if (h <= 9 ) {
-            result.append(0).append(h).append("ч ");
-        } else {
-            result.append(h).append("ч ");
-        }
-
-        if (m <= 9 ) {
-            result.append(0).append(m).append("мин ");
-        } else {
-            result.append(m).append("мин ");
-        }
-
-        if (s <= 9 ) {
-            result.append(0).append(s).append("c");
-        } else {
-            result.append(s).append("c");
-        }
+        StringBuilder result = getFormattingResult(h);
+        result.append("ч ")
+                .append(getFormattingResult(m)).append("мин ")
+                .append(getFormattingResult(s).append("c"));
 
         System.out.println(result);
+    }
 
-
+    private static StringBuilder getFormattingResult(int h) {
+        StringBuilder result = new StringBuilder();
+        if (h <= 9 ) {
+            result.append(0).append(h);
+        } else {
+            result.append(h);
+        }
+        return result;
     }
 }
