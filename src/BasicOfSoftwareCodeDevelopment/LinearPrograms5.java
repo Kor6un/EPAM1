@@ -10,7 +10,7 @@ HHч MMмин SSс.
 
 import java.util.Scanner;
 
-public class Task5 {
+public class LinearPrograms5 {
     public static void main(String[] args) {
 
         int t, h, m, s;
@@ -24,8 +24,7 @@ public class Task5 {
         m = (t - h*3600)/60;
         s = t%60;
 
-        StringBuilder result = getFormattingResult(h);
-        result.append("ч ")
+        StringBuilder result = getFormattingResult(h).append("ч ")
                 .append(getFormattingResult(m)).append("мин ")
                 .append(getFormattingResult(s).append("c"));
 

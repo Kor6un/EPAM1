@@ -9,7 +9,7 @@ package BasicOfSoftwareCodeDevelopment;
 
 import java.util.Scanner;
 
-public class Task3 {
+public class LinearPrograms3 {
     public static void main(String[] args) {
         double x, y;
 

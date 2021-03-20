@@ -14,7 +14,7 @@ package BasicOfSoftwareCodeDevelopment;
 
 import java.util.Scanner;
 
-public class Task6 {
+public class LinearPrograms6 {
     public static void main(String[] args) {
 
         double x, y;
@@ -26,7 +26,8 @@ public class Task6 {
         y = scanner.nextDouble();
         scanner.close();
 
-        System.out.println(((!(x < -2) && !(x > 2)) || (!(y < 0) && !(y > 4))) &&
-                ((!(x < -4) && !(x > 4)) || (!(y < -3) && !(y > 0))));
+        System.out.println(((y <= 4 && y >= 0) && (x <= 2 && x >= -2)) ||
+                ((y <= 0 && y >= -3) && (x <= 4 && x >= -4)));
+
     }
 }
