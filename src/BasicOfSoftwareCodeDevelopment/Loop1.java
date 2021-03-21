@@ -2,7 +2,7 @@ package BasicOfSoftwareCodeDevelopment;
 
 import java.util.Scanner;
 
-public class Cycles1 {
+public class Loop1 {
     public static void main(String[] args) {
         int a, result = 0;
         System.out.println("Enter some natural number x: ");
