@@ -1,6 +1,8 @@
 package BasicOfSoftwareCodeDevelopment;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Loop8 {
     public static void main(String[] args) {
@@ -17,8 +19,6 @@ public class Loop8 {
         char[] num2 = b.toCharArray();
 
         Set<Character> result = new HashSet<>();
-
-        int k = 0;
 
         for (char c : num1) {
             for (char value : num2) {
