@@ -10,6 +10,7 @@ public class Loop8 {
         String a, b;
 
         System.out.println("Enter numbers a, b: ");
+
         Scanner scanner = new Scanner(System.in);
         a = scanner.nextLine();
         b = scanner.nextLine();
@@ -27,6 +28,7 @@ public class Loop8 {
                 }
             }
         }
+
         System.out.println(result);
     }
 }
