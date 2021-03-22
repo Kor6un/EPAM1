@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 public class Loop7 {
     public static void main(String[] args) {
+
         int m, n;
+
         System.out.println("Enter the segment (n, m): " );
+
         Scanner scanner = new Scanner(System.in);
         m = scanner.nextInt();
         n = scanner.nextInt();
