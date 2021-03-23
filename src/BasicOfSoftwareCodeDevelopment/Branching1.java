@@ -2,10 +2,10 @@ package BasicOfSoftwareCodeDevelopment;
 
 import java.util.Scanner;
 
-public class Ramification1  {
+public class Branching1 {
     public static void main(String[] args) {
 
-        System.out.println("Input two angels of triangles: ");
+        System.out.println("Input two angles of triangle: ");
 
         float a, b;
 
@@ -15,12 +15,12 @@ public class Ramification1  {
         scanner.close();
 
         if ( a+b < 180) {
-            System.out.println("Triangles is exist");
-            if (180-a-b == 90) {
+            System.out.println("Triangle is exist");
+            if (180-a-b == 90 || a == 90 || b == 90) {
                 System.out.println("Rectangle triangle");
             }
         } else {
-            System.out.println("Triangles is not exist");
+            System.out.println("Triangle is not exist");
         }
 
     }

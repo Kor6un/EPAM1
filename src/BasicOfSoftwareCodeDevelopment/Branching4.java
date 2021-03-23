@@ -2,7 +2,7 @@ package BasicOfSoftwareCodeDevelopment;
 
 import java.util.Scanner;
 
-public class Ramification4 {
+public class Branching4 {
     public static void main(String[] args) {
 
         float a, b, x, y, z;

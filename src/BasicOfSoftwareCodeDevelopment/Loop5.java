@@ -29,11 +29,11 @@ public class Loop5 {
         for (int i = 1; i <= n; i++) {
             double v = 1 / Math.pow(2, i) + 1 / Math.pow(3, i);
             if (Math.abs(v) >= e) {
-                sum = sum + 1 / Math.pow(2, i) + 1 / Math.pow(3, i);
+                sum = sum + v;
             }
             series.add(decimalFormat.format(v));
         }
         System.out.println(series);
-        System.out.println(sum);
+        System.out.println(decimalFormat.format(sum));
     }
 }

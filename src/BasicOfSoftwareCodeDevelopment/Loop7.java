@@ -22,12 +22,12 @@ public class Loop7 {
                     stringBuilder.append(j).append(", ");
                 }
             }
-        }
-
-        if (stringBuilder.length() == 0) {
-            System.out.println(stringBuilder.append("Divider is not exist"));
-        } else {
-            System.out.println(stringBuilder);
+            if (stringBuilder.length() == 0) {
+                System.out.println(stringBuilder.append("Divider for ").append(i).append(" -  Divider is not exist"));
+            } else {
+                System.out.println("Divider for " + i + " - " + stringBuilder.deleteCharAt(stringBuilder.length()-2));
+            }
+            stringBuilder.setLength(0);
         }
     }
 }

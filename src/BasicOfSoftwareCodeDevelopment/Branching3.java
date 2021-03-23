@@ -2,7 +2,7 @@ package BasicOfSoftwareCodeDevelopment;
 
 import java.util.Scanner;
 
-public class Ramification3 {
+public class Branching3 {
     public static void main(String[] args) {
 
         double x1, y1, x2, y2, x3, y3;

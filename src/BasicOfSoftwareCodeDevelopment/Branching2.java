@@ -8,7 +8,7 @@ package BasicOfSoftwareCodeDevelopment;
 
 import java.util.Scanner;
 
-public class Ramification2 {
+public class Branching2 {
     public static void main(String[] args) {
         System.out.println("Enter a, b, c, d:");
 
