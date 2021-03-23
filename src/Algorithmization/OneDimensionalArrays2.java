@@ -1,6 +1,9 @@
 package Algorithmization;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class OneDimensionalArrays2 {
@@ -19,29 +22,34 @@ public class OneDimensionalArrays2 {
         z = scanner.nextDouble();
         scanner.close();
 
-        ArrayList<Double> arrayToString = new ArrayList<>();
+        ArrayList<Double> doublesArrayList = new ArrayList<>();
 
         double[] array = new double[n];
 
+        NumberFormat numberFormat = NumberFormat.getInstance(Locale.ENGLISH);
+        DecimalFormat decimalFormat = (DecimalFormat) numberFormat;
+        String pattern = "###.###";
+        decimalFormat.applyPattern(pattern);
+
         for (int i = 0; i < n; i++) {
-            double randomDouble = (Math.random() * 30);
+            double randomDouble = Double.parseDouble(decimalFormat.format(Math.random() * 30));
             array[i] = randomDouble;
-            arrayToString.add(array[i]);
+            doublesArrayList.add(array[i]);
         }
 
-        System.out.println("Original array: " + arrayToString);
+        System.out.println("Original array: " + doublesArrayList);
 
-        arrayToString.clear();
+        doublesArrayList.clear();
 
         int count = 0;
-
+        //TODO
         for (int i = 0; i < n; i++) {
             if (array[i] > z) {
                 array[i] = z;
                 count += 1;
             }
-            arrayToString.add(array[i]);
+            doublesArrayList.add(array[i]);
         }
-        System.out.println(arrayToString + "\n" + "Number of replacements = " + count);
+        System.out.println("Changed array: " +doublesArrayList + "\n" + "Number of replacements = " + count);
     }
 }
