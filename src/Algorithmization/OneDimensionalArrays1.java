@@ -19,9 +19,9 @@ public class OneDimensionalArrays1 {
         scanner.close();
 
         int[] array = new int[n];
+
         for (int i = 0; i < n; i++) {
-            int randomInt = (int) ( Math.random() * 30 );
-            array[i] = randomInt;
+            array[i] =  (int) ( Math.random() * 30 );
         }
 
         ArrayList<Integer> arrayToString = new ArrayList<>();

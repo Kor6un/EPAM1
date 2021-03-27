@@ -34,6 +34,5 @@ public class OneDimensionalArrays3 {
         System.out.println("Positive: " + (n - negative - zero) + "\n" +
                 "negative: " + negative + "\n" +
                 "zero :" + zero);
-
     }
 }
