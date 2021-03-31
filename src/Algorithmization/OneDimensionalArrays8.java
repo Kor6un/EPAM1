@@ -18,21 +18,49 @@ public class OneDimensionalArrays8 {
         System.out.print ("Original array: ");
 
         for (int i = 0; i < n; i++) {
-            ints[i] = (int) (Math.random() * 3);
+            ints[i] = (int) (Math.random() * 10);
             System.out.print(ints[i] + " ");
         }
 
-        int count = 0;
-        int min = ints[0];
+        int min = getMin(ints);
+        int count = getNumberCount(ints, min);
+
+        int[] changedInts = new int[n - count];
 
         //TODO
-        for (int i = 0; i < n; i++) {
-            if (ints[i] <= min) {
-                min = i;
+       while (n - 1 > 0) {
+           if (ints[n - 1] != min) {
+               changedInts[count - 1] = ints[n - 1];
+           }
+          n --;
+       }
+
+        System.out.println("\n" + "min = " + min);
+        System.out.println("count: " + count);
+        System.out.print ("Changed array: ");
+
+        for (int i : changedInts) {
+            System.out.print(i + " ");
+        }
+    }
+
+    private static int getMin(int[] ints) {
+        int min = ints[0];
+        for (int anInt : ints) {
+            if (anInt < min) {
+                min = anInt;
+            }
+        }
+        return min;
+    }
+
+    private static int getNumberCount(int[] ints, int number) {
+        int count = 0;
+        for (int anInt : ints) {
+            if (anInt == number) {
                 count += 1;
             }
         }
-        System.out.println("\n" + "min = " + min);
-        System.out.println("count: " + count);
+        return count;
     }
 }
