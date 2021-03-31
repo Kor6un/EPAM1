@@ -25,7 +25,7 @@ public class OneDimensionalArrays6 {
         decimalFormat.applyPattern(pattern);
 
         System.out.println("Original array (index: value): ");
-        //TODO
+
         for (int i = 0; i < n; i++) {
             doubles[i] = Double.parseDouble(decimalFormat.format(Math.random() * 15));
             System.out.println((i + 1) + ": " + doubles[i] + "; ");
@@ -37,18 +37,25 @@ public class OneDimensionalArrays6 {
         System.out.println("Sum: " + decimalFormat.format(sum));
     }
 
-    public static boolean checkSimple(int i){
-        if (i<=1)
+    public static boolean checkSimple(int i) {
+        if (i <= 1) {
             return false;
-        else if (i <=3)
-            return true;
-        else if (i%2==0 || i %3 ==0)
-            return false;
+        } else {
+            if (i <= 3) {
+                return true;
+            } else {
+                if (i % 2 == 0 || i % 3 == 0) {
+                    return false;
+                }
+            }
+        }
+
         int n = 5;
-        while (n*n <=i){
-            if (i % n ==0 || i % (n+2) == 0)
+
+        while (n * n <= i) {
+            if (i % n == 0 || i % (n + 2) == 0)
                 return false;
-            n=n+6;
+            n = n + 6;
         }
         return true;
     }
