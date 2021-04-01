@@ -18,7 +18,7 @@ public class OneDimensionalArrays8 {
         System.out.print ("Original array: ");
 
         for (int i = 0; i < n; i++) {
-            ints[i] = (int) (Math.random() * 10);
+            ints[i] = (int) (Math.random() * 5);
             System.out.print(ints[i] + " ");
         }
 
@@ -27,13 +27,16 @@ public class OneDimensionalArrays8 {
 
         int[] changedInts = new int[n - count];
 
-        //TODO
-       while (n - 1 > 0) {
-           if (ints[n - 1] != min) {
-               changedInts[count - 1] = ints[n - 1];
-           }
-          n --;
-       }
+        int k = 0;
+        int j = 0;
+
+        while (k < n) {
+            if (ints[k] != min) {
+                changedInts[j] = ints[k];
+                j++;
+            }
+            k++;
+        }
 
         System.out.println("\n" + "min = " + min);
         System.out.println("count: " + count);
