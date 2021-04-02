@@ -19,9 +19,9 @@ public class OneDimensionalArrays9 {
 
         display(ints);
 
-      //  System.out.println("\nMax = " + findIntMax(ints));
+        System.out.println("\nMax = " + findIntMax(ints));
 
-        System.out.println("\nMax = " + countsNumbersToArray(ints));
+       // System.out.println("\nMax = " + countsNumbersToArray(ints));
 
         System.out.println("Indexes: ");
         display(getMaxCountIndexes(ints));
@@ -48,14 +48,26 @@ public class OneDimensionalArrays9 {
     }
 //TODO
     private static int[] getMaxCountIndexes(int[] intArray) {
-        int[] indexes = new int[intArray.length];
         int max = findIntMax(intArray);
         int i = 0;
         int size = intArray.length;
-        while (i < size) {
+        while (i <= size) {
             if (intArray[i] == max) {
-                indexes[i] = intArray[i];
                 size -= 1;
+            }
+            i++;
+        }
+
+        int newSize = intArray.length - size;
+        int[] indexes = new int[newSize];
+
+        i = 0;
+        size = intArray.length;
+        int j = 0;
+        while (i <= size && j <= newSize-1) {
+            if (intArray[i] == max) {
+                indexes[j] = i;
+                j++;
             }
             i++;
         }
@@ -73,9 +85,8 @@ public class OneDimensionalArrays9 {
     }
 
     private static void display(int[] intArray) {
-        int n = intArray.length;
-        for (int i = 0; i < n; i++) {
-            System.out.print(intArray[i] + " ");
+        for (int j : intArray) {
+            System.out.print(j + " ");
         }
     }
 
