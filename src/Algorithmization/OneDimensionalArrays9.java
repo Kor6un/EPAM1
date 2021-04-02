@@ -19,11 +19,15 @@ public class OneDimensionalArrays9 {
 
         display(ints);
 
-        System.out.println( countsNumbersOfArray(ints));
+      //  System.out.println("\nMax = " + findIntMax(ints));
 
+        System.out.println("\nMax = " + countsNumbersToArray(ints));
+
+        System.out.println("Indexes: ");
+        display(getMaxCountIndexes(ints));
     }
-
-    private static int countsNumbersOfArray(int[] intArray) {
+//TODO
+    private static int countsNumbersToArray(int[] intArray) {
         int result = 0;
         int countSingleNumber = 0;
         int[] counts = new int[intArray.length];
@@ -37,19 +41,35 @@ public class OneDimensionalArrays9 {
             countSingleNumber = 0;
         }
 
-        //TODO
-        for (int i = 0; i < counts.length; i++) {
-            for (int j = 1; j < counts.length - 1; j++) {
-                if (counts[i] != counts [j]) {
-                    result = counts[i];
-                } else  if (counts[i] == counts [j] && intArray[i] < intArray[j]) {
-                    result = counts[i];
-                } else {
-                    result = counts[j];
-                }
+        int maxCount = findIntMax(intArray);
+        int[] maxCountIndexes = getMaxCountIndexes(intArray);
+
+        return result;
+    }
+//TODO
+    private static int[] getMaxCountIndexes(int[] intArray) {
+        int[] indexes = new int[intArray.length];
+        int max = findIntMax(intArray);
+        int i = 0;
+        int size = intArray.length;
+        while (i < size) {
+            if (intArray[i] == max) {
+                indexes[i] = intArray[i];
+                size -= 1;
+            }
+            i++;
+        }
+        return indexes;
+    }
+//TODO
+    private static int findIntMax(int[] ints) {
+        int max = ints[0];
+        for (int i : ints) {
+            if (i > max) {
+                max = i;
             }
         }
-        return result;
+        return max;
     }
 
     private static void display(int[] intArray) {
