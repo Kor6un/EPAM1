@@ -5,113 +5,66 @@ import java.util.Scanner;
 public class OneDimensionalArrays9 {
     public static void main(String[] args) {
 
-        System.out.print("Enter the size of array n: ");
-
         int n;
+
+        System.out.print("Enter the number of array size n: ");
 
         Scanner scanner = new Scanner(System.in);
         n = scanner.nextInt();
         scanner.close();
 
-        int[] ints = getRandomIntArray(n);
+        int[] randomArray = getRandomIntArray(n);
 
         System.out.print("Original array: ");
-        display(ints);
+        display(randomArray);
 
-
+        System.out.print("\nOften number: " + oftenNumber(randomArray));
     }
 
-//TODO
-    private static int oftenNumbersToArray(int[] intArray) {
-        int result = 0;
-        int countSingleNumber = 0;
+    private static int oftenNumber(int[] intArray) {
+        int count = 0;
         int[] counts = new int[intArray.length];
         for (int i = 0; i < intArray.length; i++) {
             for (int k : intArray) {
                 if (intArray[i] == k) {
-                    countSingleNumber += 1;
+                    count += 1;
                 }
             }
-            counts[i] = countSingleNumber;
-            countSingleNumber = 0;
+            counts[i] = count;
+            count = 0;
         }
-        //!!!!!!!!!!
-        int[] indexes = getIndexOfMaxNumbers(counts);
-
-        System.out.print("\ngetMaxValueIndexes: " );
-        display(indexes);
-
-        int[] values = new int[indexes.length];
-        for (int i = 0; i < indexes.length; i++) {
-            values[i] = intArray[indexes[i]];
-        }
-
-        for (int i = 0; i < values.length; i++) {
-           if (values.length == 1) {
-               result = values[i];
-           } else {
-               //!!!!!!!!!!!!!!!!!
-               if (values[i] < values [i + 1]) {
-                   result = values[i];
-               } else {
-                   result = values[i + 1];
-               }
-               i -= 1 ;
-           }
-        }
-
-
-        return result;
-    }
-
-    private static int[] getIndexOfMaxNumbers(int[] intArray) {
-
-
-        int max = getMax(intArray);
-        int i = 0;
-        int size = intArray.length;
-        while (i <= size) {
-            if (intArray[i] == max) {
-                size -= 1;
+        int max;
+        max = getMax(counts);
+        int size = 0;
+        for (int anInt : counts) {
+            if (anInt == max) {
+                size += 1;
             }
-            i++;
         }
-        int newSize = intArray.length - size;
-        int[] indexes = new int[newSize];
-        i = 0;
-        size = intArray.length;
-        int j = 0;
-       //321313132131312
-        while (i <= size && j <= newSize - 1) {
-            if (intArray[i] == max) {
-                indexes[j] = i;
-                j++;
+        int[] indexes = new int[size];
+        for (int i = 0; i < size; i++) {
+            if (counts[i] == max) {
+                indexes[i] = i;
             }
-            i++;
         }
-        return indexes;
+        int min;
+        min = intArray[indexes[0]];
+        for (int index : indexes) {
+            if (intArray[index] < min) {
+                min = intArray[index];
+            }
+        }
+        return min;
     }
 
     private static int getMax(int[] ints) {
         int max = ints[0];
-        if (ints.length > 1) {
-            for (int i : ints) {
-                if (i > max) {
-                    max = i;
-                }
+        for (int i : ints) {
+            if (i > max) {
+                max = i;
             }
         }
         return max;
-    }
-
-    private static int getMin(int[] ints) {
-        int min = ints[0];
-        for (int i : ints) {
-            if (i < min) {
-                min = i;
-            }
-        }
-        return min;
     }
 
     private static void display(int[] intArray) {
@@ -123,7 +76,7 @@ public class OneDimensionalArrays9 {
     private static int[] getRandomIntArray(int size) {
         int[] result = new int[size];
         for (int i = 0; i < size; i++) {
-            result[i] = (int) (Math.random() * 10);
+            result[i] = (int) (Math.random() * 5);
         }
         return result;
     }
