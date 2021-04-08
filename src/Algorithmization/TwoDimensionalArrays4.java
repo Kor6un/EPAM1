@@ -10,16 +10,16 @@ public class TwoDimensionalArrays4 {
     }
 
     private static int getEvenSize() {
-        int n;
+        int size;
         System.out.print("Enter the size of array n: ");
         Scanner scanner = new Scanner(System.in);
-        n = scanner.nextInt();
-        while (n % 2 != 0) {
+        size = scanner.nextInt();
+        while (size % 2 != 0) {
             System.out.print("Enter the size of array n: ");
-            n = scanner.nextInt();
+            size = scanner.nextInt();
         }
         scanner.close();
-        return n;
+        return size;
     }
 
     private static void display(int[][] ints) {
