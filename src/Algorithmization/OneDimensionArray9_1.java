@@ -34,7 +34,8 @@ public class OneDimensionArray9_1 {
             count = 0;
         }
 
-        int max = getMax(counts);
+        int max;
+        max = getMax(counts);
 
     //TODO
         int size = 0;
@@ -45,17 +46,18 @@ public class OneDimensionArray9_1 {
         }
         int[] indexes = new int[size];
         for (int i = 0; i < size; i++) {
-            for (int j = 0; j < counts.length; j++) {
-                if (counts[j] == max) {
-                    indexes[i]= j;
-                }
+            if (counts[i] == max) {
+                indexes[i] = i;
+             //   i++;
             }
         }
 
 
 
 
-        int min = intArray[indexes[0]];
+        int min;
+        min = intArray[indexes[0]];
+
         for (int index : indexes) {
             if (intArray[index] < min) {
                 min = intArray[index];
@@ -101,7 +103,7 @@ public class OneDimensionArray9_1 {
     private static int[] getRandomIntArray(int size) {
         int[] result = new int[size];
         for (int i = 0; i < size; i++) {
-            result[i] = (int) (Math.random() * 10);
+            result[i] = (int) (Math.random() * 5);
         }
         return result;
     }
