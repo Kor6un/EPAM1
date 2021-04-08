@@ -1,0 +1,48 @@
+package Algorithmization;
+
+import java.util.Scanner;
+
+public class TwoDimensionalArrays4 {
+    public static void main(String[] args) {
+
+        int n = getEvenSize();
+        display(getMatrix(n));
+    }
+
+    private static int getEvenSize() {
+        int n;
+        System.out.print("Enter the size of array n: ");
+        Scanner scanner = new Scanner(System.in);
+        n = scanner.nextInt();
+        while (n % 2 != 0) {
+            System.out.print("Enter the size of array n: ");
+            n = scanner.nextInt();
+        }
+        scanner.close();
+        return n;
+    }
+
+    private static void display(int[][] ints) {
+        for (int i = 0; i < ints.length; i++) {
+            for (int j = 0; j < ints.length; j++) {
+                System.out.print(ints[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    private static int[][] getMatrix(int size) {
+        int[][] ints = new int[size][size];
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if ((i+1) % 2 != 0) {
+                    ints[i][j] = j + 1;
+                } else {
+                    ints[i][j] = size - j;
+                }
+            }
+        }
+        return ints;
+    }
+}
