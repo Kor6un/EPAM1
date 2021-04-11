@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class TwoDimensionalArrays5 {
     public static void main(String[] args) {
-
         int n = getEvenSize();
         display(getMatrix(n));
     }
@@ -33,7 +32,6 @@ public class TwoDimensionalArrays5 {
 
     private static int[][] getMatrix(int size) {
         int[][] ints = new int[size][size];
-
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if ((size - i) > j) {
