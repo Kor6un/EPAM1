@@ -29,7 +29,6 @@ public class TwoDimensionalArrays9 {
                 columnNumber = i+1;
             }
         }
-
         return columnNumber;
     }
 
@@ -44,7 +43,7 @@ public class TwoDimensionalArrays9 {
             sum = 0;
         }
         return sums;
-    };
+    }
 
     private static int getInt() {
         int i;
