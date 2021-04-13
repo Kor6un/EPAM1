@@ -1,11 +1,11 @@
 package Algorithmization;
 
 public class TwoDimensionalArrays11 {
-    public static int ROW = 10;
-    public static  int COLUMN = 20;
+    public static int ROWS = 10;
+    public static  int COLUMNS = 20;
 
     public static void main(String[] args) {
-        int[][] matrix = getMatrix(ROW, COLUMN);
+        int[][] matrix = getMatrix(ROWS, COLUMNS);
         display(matrix);
 
         getSolution(matrix);
@@ -29,10 +29,10 @@ public class TwoDimensionalArrays11 {
     }
 
     private static void display(int[][] ints) {
-        int row = ints.length;
-        int column = ints[0].length;
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < column; j++) {
+        int rows = ints.length;
+        int columns = ints[0].length;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 if (ints[i][j] > 9) {
                     System.out.print(ints[i][j] + "  ");
                 } else {
