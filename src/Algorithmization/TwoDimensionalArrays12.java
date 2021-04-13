@@ -10,14 +10,14 @@ public class TwoDimensionalArrays12 {
         display(matrix);
 
         System.out.println("\nSorted ascending array: ");
-        display(getSortedAscendingArray(matrix));
+        display(getSortedRowsAscending(matrix));
 
         System.out.println("\nSorted ascending array: ");
-        display(getSortedDescendingArray(matrix));
+        display(getSortedRowsDescending(matrix));
 
     }
 
-    private static int[][] getSortedAscendingArray(int[][] ints) {
+    private static int[][] getSortedRowsAscending(int[][] ints) {
         int rows = ints.length;
         int columns = ints[0].length;
         int temp;
@@ -35,7 +35,7 @@ public class TwoDimensionalArrays12 {
         return ints;
     }
 
-    private static int[][] getSortedDescendingArray(int[][] ints) {
+    private static int[][] getSortedRowsDescending(int[][] ints) {
         int rows = ints.length;
         int columns = ints[0].length;
         int temp;
