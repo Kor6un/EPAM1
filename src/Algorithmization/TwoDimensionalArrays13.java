@@ -1,6 +1,6 @@
 package Algorithmization;
 
-public class TwoDimensionalArrays12 {
+public class TwoDimensionalArrays13 {
     public static int ROWS = 4;
     public static  int COLUMN = 10;
 
@@ -10,24 +10,24 @@ public class TwoDimensionalArrays12 {
         display(matrix);
 
         System.out.println("\nSorted ascending array: ");
-        display(getSortedRowsAscending(matrix));
+        display(getSortedColumnsAscending(matrix));
 
         System.out.println("\nSorted descending array: ");
-        display(getSortedRowsDescending(matrix));
+        display(getSortedColumnsDescending(matrix));
 
     }
 
-    private static int[][] getSortedRowsAscending(int[][] ints) {
+    private static int[][] getSortedColumnsAscending(int[][] ints) {
         int rows = ints.length;
         int columns = ints[0].length;
         int temp;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                for (int k = 0; k < columns-1; k++) {
-                    if (ints[i][j] < ints[i][k]) {
-                        temp = ints[i][k];
-                        ints[i][k] = ints[i][j];
-                        ints[i][j] = temp;
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                for (int k = 0; k < rows-1; k++) {
+                    if (ints[j][i] < ints[k][i]) {
+                        temp = ints[j][i];
+                        ints[j][i] = ints[k][i];
+                        ints[k][i] = temp;
                     }
                 }
             }
@@ -35,17 +35,17 @@ public class TwoDimensionalArrays12 {
         return ints;
     }
 
-    private static int[][] getSortedRowsDescending(int[][] ints) {
+    private static int[][] getSortedColumnsDescending(int[][] ints) {
         int rows = ints.length;
         int columns = ints[0].length;
         int temp;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                for (int k = 0; k < columns-1; k++) {
-                    if (ints[i][j] > ints[i][k]) {
-                        temp = ints[i][k];
-                        ints[i][k] = ints[i][j];
-                        ints[i][j] = temp;
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                for (int k = 0; k < rows-1; k++) {
+                    if (ints[j][i] > ints[k][i]) {
+                        temp = ints[j][i];
+                        ints[j][i] = ints[k][i];
+                        ints[k][i] = temp;
                     }
                 }
             }
