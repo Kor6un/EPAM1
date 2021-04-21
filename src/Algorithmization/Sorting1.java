@@ -21,7 +21,7 @@ public class Sorting1 {
             int i = 0;
             int j = 0;
             int l = 0;
-            while (i < (n + m)){
+            while (i < n + m){
                 if (i + 1 <= k){
                     array3[i] = array1[i];
                 } else {
@@ -41,6 +41,8 @@ public class Sorting1 {
         } else {
             System.out.println("Incorrect index for input");
         }
+
+
     }
 
     private static void display(int[] array){
