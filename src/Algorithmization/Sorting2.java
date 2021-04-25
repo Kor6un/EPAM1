@@ -21,9 +21,30 @@ public class Sorting2 {
         System.out.println(Arrays.toString(ints1));
         System.out.println(Arrays.toString(ints2));
 
+        System.out.println("With additional array: ");
         int[] result = getConcatenationArray (ints1, ints2);
         Arrays.sort(result);
         System.out.println(Arrays.toString(result));
+
+        System.out.println("Without additional array: ");
+        getResultWithoutConcatenation(ints1, ints2);
+
+    }
+
+    private static void getResultWithoutConcatenation(int[] a, int[] b){
+        int temp;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+                if (a[i] > b[j]) {
+                    temp = a[i];
+                    a[i] = b[j];
+                    b[j] = temp;
+                } else {
+                   Arrays.sort(b);
+                }
+            }
+        }
+        System.out.print(Arrays.toString(a) + Arrays.toString(b));
     }
 
     private static int[] getConcatenationArray (int[] ints1, int[] ints2) {
@@ -53,5 +74,4 @@ public class Sorting2 {
     private static int getInt() {
         return new Scanner(System.in).nextInt();
     }
-
 }
