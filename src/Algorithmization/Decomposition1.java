@@ -19,18 +19,9 @@ public class Decomposition1 {
     }
 
     private static int nod(int a, int b) {
-        ArrayList<Integer> dividersA = new ArrayList<>();
-        for (int i = 1; i <= a; i++) {
-            if (a % i == 0) {
-                dividersA.add(i);
-            }
-        }
-        ArrayList<Integer> dividersB = new ArrayList<>();
-        for (int i = 1; i <= b; i++) {
-            if (b % i == 0) {
-                dividersB.add(i);
-            }
-        }
+        ArrayList<Integer> dividersA = getDividers(a);
+        ArrayList<Integer> dividersB = getDividers(b);
+
         ArrayList<Integer> totalDividers = new ArrayList<>();
         for (Integer integer : dividersA) {
             for (Integer value : dividersB) {
@@ -44,6 +35,16 @@ public class Decomposition1 {
             nod = i;
         }
         return nod;
+    }
+
+    private static ArrayList<Integer> getDividers(int number) {
+        ArrayList<Integer> dividers = new ArrayList<>();
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                dividers.add(i);
+            }
+        }
+        return dividers;
     }
 
     private static int nok(int a, int b){
