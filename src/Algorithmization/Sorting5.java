@@ -24,10 +24,43 @@ public class Sorting5 {
         System.out.println("Changed  array: " + Arrays.toString(ints) +"\nTime: " + (end-start));
     }
 
-//TODO
-    private static int[] sortByInserts(int[] ints) {
+    private static void sortByInserts(int[] ints) {
+        for (int i = 1; i < ints.length; i++) {
+            int temp = ints[i];
+            int j = i - 1;
+            while(j >= 0 && temp > ints[j]) {
+                ints[j+1] = ints[j];
+                j--;
+            }
+            ints[j+1] = temp;
+        }
+    }
 
-        return ints;
+    public static int binarySearch(int[] ints, int elementToSearch) {
+
+        int firstIndex = 0;
+        int lastIndex = ints.length - 1;
+
+        // условие прекращения (элемент не представлен)
+        while(firstIndex <= lastIndex) {
+            int middleIndex = (firstIndex + lastIndex) / 2;
+            // если средний элемент - целевой элемент, вернуть его индекс
+            if (ints[middleIndex] == elementToSearch) {
+                return middleIndex;
+            }
+
+            // если средний элемент меньше
+            // направляем наш индекс в middle+1, убирая первую часть из рассмотрения
+            else if (ints[middleIndex] < elementToSearch)
+                firstIndex = middleIndex + 1;
+
+                // если средний элемент больше
+                // направляем наш индекс в middle-1, убирая вторую часть из рассмотрения
+            else if (ints[middleIndex] > elementToSearch)
+                lastIndex = middleIndex - 1;
+
+        }
+        return -1;
     }
 
     private static int[] getRandomIntArray(int size) {
