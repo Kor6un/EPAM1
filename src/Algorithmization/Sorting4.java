@@ -24,7 +24,7 @@ public class Sorting4 {
         System.out.println("Changed  array: " + Arrays.toString(ints) +"\nTime: " + (end-start));
     }
 
-    private static int[] sortingExchanges(int[] ints) {
+    private static void sortingExchanges(int[] ints) {
         int count = 0;
         int temp;
         boolean isSorted = false;
@@ -41,7 +41,6 @@ public class Sorting4 {
             }
         }
         System.out.println("Count of exchanges: " + count);
-        return ints;
     }
 
     private static int[] getRandomIntArray(int size) {

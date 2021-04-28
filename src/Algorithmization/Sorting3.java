@@ -24,7 +24,7 @@ public class Sorting3 {
         System.out.println("Changed  array: " + Arrays.toString(ints) +"\nTime: " + (end-start));
     }
 
-    private static int[] selectionSort(int[] ints) {
+    private static void selectionSort(int[] ints) {
         int size = ints.length;
         int temp;
         for (int i = 0; i < size; i++) {
@@ -41,7 +41,6 @@ public class Sorting3 {
             ints[index] = temp;
             size--;
         }
-        return ints;
     }
 
     private static int[] getRandomIntArray(int size) {
