@@ -35,13 +35,14 @@ public class Decomposition4 {
                 }
             }
         }
-        System.out.println("Max distance between Point " + (index1+1) + " and Point " + (index2+1) + " = " + max);
+        System.out.println("Max distance between Point " + (index1 + 1) +
+                " and Point " + (index2 + 1) + " = " + max);
     }
 
     private static void displayPoints(int[] x, int[] y) {
         if (x.length == y.length) {
             for (int i = 0; i < x.length; i++) {
-                System.out.println("Point " + (i+1) + " (" + x[i] + ", " + y[i] + ")");
+                System.out.println("Point " + (i + 1) + " (" + x[i] + ", " + y[i] + ")");
             }
         } else {
             System.out.println("Error count of coordinates!");
@@ -49,7 +50,7 @@ public class Decomposition4 {
     }
 
     private static double getLength(int x1, int y1, int x2, int y2) {
-        return Math.sqrt((Math.pow((x2-x1), 2))+Math.pow((y2 - y1), 2));
+        return Math.sqrt((Math.pow((x2 - x1), 2)) + Math.pow((y2 - y1), 2));
     }
 
     private static int getInt() {
@@ -58,6 +59,6 @@ public class Decomposition4 {
 
     //рандомит числа от -10 до 10 (исключая границы диапазона)
     private static int getRandomInt() {
-        return (int) (Math.random()*20-10);
+        return (int) (Math.random() * 20 - 10);
     }
 }
