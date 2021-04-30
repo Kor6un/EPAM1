@@ -20,16 +20,16 @@ public class Decomposition4 {
 
         displayPoints(x, y);
 
-        maxLength(x, y);
+        maxDistance(x, y);
     }
 
-    private static void maxLength(int[] x, int[] y) {
+    private static void maxDistance(int[] x, int[] y) {
         int index1 = 0, index2 = 0;
-        double max = getLength(x[0], y[0], x[1], y[1]);
+        double max = getDistance(x[0], y[0], x[1], y[1]);
         for (int i = 0; i < x.length; i++) {
             for (int j = 1; j < y.length; j++) {
-                if (i < j && max < getLength(x[i], y[i], x[j], y[j])) {
-                    max = getLength(x[i], y[i], x[j], y[j]);
+                if (i < j && max < getDistance(x[i], y[i], x[j], y[j])) {
+                    max = getDistance(x[i], y[i], x[j], y[j]);
                     index1 = i;
                     index2 = j;
                 }
@@ -49,7 +49,7 @@ public class Decomposition4 {
         }
     }
 
-    private static double getLength(int x1, int y1, int x2, int y2) {
+    private static double getDistance(int x1, int y1, int x2, int y2) {
         return Math.sqrt((Math.pow((x2 - x1), 2)) + Math.pow((y2 - y1), 2));
     }
 
