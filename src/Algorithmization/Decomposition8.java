@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 public class Decomposition8 {
     public static void main(String[] args) {
-        
-        int[] ints = randomArray(9);
+
+        int size = 9;
+        int[] ints = randomArray(size);
         
         System.out.println(Arrays.toString(ints));
 
