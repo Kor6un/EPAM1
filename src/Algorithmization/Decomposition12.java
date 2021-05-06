@@ -3,7 +3,6 @@ package Algorithmization;
 import java.util.ArrayList;
 import java.util.Scanner;
 /*
-
         ПРИМЕР РЕШЕНИЯ
 
         Введите натуральное число K: 5
