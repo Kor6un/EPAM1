@@ -56,16 +56,18 @@ public class CharArray1 {
             }
             i++;
         }
+        return getString(result);
+    }
 
-        String output = "";
+    private static String getString(char[] result) {
+        StringBuilder output = new StringBuilder();
         int size = result.length;
         int k = 0;
-
         while (size > 0) {
-            output += result[k];
+            output.append(result[k]);
             size--;
             k++;
         }
-        return output;
+        return output.toString();
     }
 }
