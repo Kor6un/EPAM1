@@ -1,17 +1,12 @@
 package StringAndBasicOfTextProcessing.StringToCharArray;
 
-import java.util.Locale;
-
 public class CharArray1 {
     public static void main(String[] args) {
         String[] variableNames = new String[] {
                 "oneVariable",
                 "twoVariable",
-                "threeVariable",
-                "fourVariable",
-                "fiveVariable",
-                "sixVariable",
-                "someNumberVariable"
+                "someNumberVariable",
+                "SomeNumberVariable"
         };
         display(variableNames);
 
@@ -35,13 +30,42 @@ public class CharArray1 {
 
     private static String toSnakeCase(String input) {
         char[] chars = input.toCharArray();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (char c : chars) {
-            if (c > 65 && c < 90) {
-                stringBuilder.append('_');
+        int count = 0;
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] > 65 && chars[i] < 90 && i != 0) {
+                count ++;
             }
-            stringBuilder.append(c);
         }
-        return String.valueOf(stringBuilder).toLowerCase(Locale.ROOT);
+
+        if (count == 0) {
+            return input;
+        }
+
+        char[] result = new char[chars.length + count];
+        int i = 0;
+        int j = 0;
+
+        while (i < chars.length) {
+            if (chars[i] > 65 && chars[i] < 90 && i != 0) {
+                result[i + j] = '_';
+                result[i + j + 1] = Character.toLowerCase(chars[i]);
+                j++;
+            } else {
+                result[i + j] = Character.toLowerCase(chars[i]);
+            }
+            i++;
+        }
+
+        String output = "";
+        int size = result.length;
+        int k = 0;
+
+        while (size > 0) {
+            output += result[k];
+            size--;
+            k++;
+        }
+        return output;
     }
 }
