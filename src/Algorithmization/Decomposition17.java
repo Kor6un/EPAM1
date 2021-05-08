@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Decomposition17 {
     public static void main(String[] args) {
+
         int n;
 
         System.out.print("Some natural number: ");
