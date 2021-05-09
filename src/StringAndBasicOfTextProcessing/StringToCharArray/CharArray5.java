@@ -8,9 +8,7 @@ public class CharArray5 {
     }
 
     private static String cutSpace(String input) {
-        String output = "";
         char[] chars = input.toCharArray();
-        int i = 0;
         int countLastSpaces = 0;
         int j = chars.length - 1;
         if (isSpace(chars[j])) {
@@ -19,6 +17,8 @@ public class CharArray5 {
                 j--;
             }
         }
+        int i = 0;
+        String output = "";
         while (i < chars.length - countLastSpaces) {
             if (i == 0 && isSpace(chars[i])) {
                 i++;
